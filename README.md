@@ -29,7 +29,7 @@ print('123')
 print(1.23)
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/1.png)
 
 ## Выводы
 В данном коде я понял что принт выводит.
@@ -44,7 +44,7 @@ print(3 + 3.5 + 13 - 10)
 ```
 
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/two.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/two.png)
 
 ## Выводы
 Этот код выполняет математические операции с использованием базовых математических операторов, таких как + и -
@@ -64,7 +64,7 @@ print(one + two)
 ```
 
 ### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/three.png)
+![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/three.png)
 
 ## Выводы
 В данном коде мы узнали разные способы вывода предложения
@@ -83,7 +83,7 @@ three = None
 print(str(three))
 ```
 ### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/2.png)
+![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/2.png)
 
 ### Выводы
 Итак, код выполняет преобразования различных типов данных и выводит результаты.
@@ -99,7 +99,7 @@ print(one, two, three)
 ```
 
 ### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/3.png)
+![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/3.png)
 
 ### Выводы
 Код выводит введенные пользователем значения с помощью print(). Таким образом, пользователю предлагается ввести три значения, и после их ввода они выводятся на экран.
@@ -117,7 +117,7 @@ print("Остаток от деления:", a % b)
 ```
 
 ### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/4.png)
+![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/4.png)
 
 ### Выводы
 Код выполняет различные операции с числами a и b и выводит результат каждой из них.
@@ -131,7 +131,7 @@ print(line * 8)
 ```
 
 ### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/5.png)
+![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/5.png)
 
 ### Выводы
 Умножаем (вводим) количество раз вывода переменной
@@ -145,7 +145,7 @@ print(sentence.count("o"))
 ```
 
 ### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/6.png)
+![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/6.png)
 
 ### Выводы
 Считам количество буковок "о", count - считать
@@ -158,7 +158,7 @@ print("Hello\nWorld")
 ```
 
 ### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/7.png)
+![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/7.png)
 
 ### Выводы
 перенос на новую строку с помощью \n
@@ -171,7 +171,7 @@ print("Hello\nWorld")
 ```
 
 ### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/7.png)
+![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/7.png)
 
 ### Выводы
 перенос на новую строку с помощью \n
@@ -186,7 +186,7 @@ print(st[:5])
 ```
 
 ### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Lab/8.png)
+![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Lab/8.png)
 
 ### Выводы
 код выводит символ "e" и подстроку "Hello". Выводит подстроку строки st от начала (индекс 0) до индекса 5
@@ -200,7 +200,7 @@ print(st[:5])
 print(bool(0))
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/1.png)
 
 ## Выводы
 В данном случае, значение 0 является ложным, поэтому код выведет False.
@@ -213,7 +213,7 @@ a, b, c = 1, 2, 3
 print(a, b, c)
 ```
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/2.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/2.png)
 
 ## Выводы
 Этот код присваивает значения 1, 2 и 3 переменным a, b и c соответственно, а затем выводит их на экран с помощью функции print
@@ -226,7 +226,7 @@ one  = input("Ну тут типа пиши число: ")
 print(one)
 ```
 ### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/3.png)
+![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/3.png)
 
 ## Выводы
 Запрашиваем у пользователя ввод числа с помощью функции input и выводит введенное значение на экран с помощью функции print
@@ -240,7 +240,7 @@ L = "py "
 print(L * 20)
 ```
 ### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/4.png)
+![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/4.png)
 
 ## Выводы
 Вывели чуть больше чем 16 символов)
@@ -253,7 +253,7 @@ day, month, year = 17, "октябрь", 2023
 print(f"Сегодня {day} {month} {year}.", end=" Всего хорошего!")
 ```
 ### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/5.png)
+![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/5.png)
 
 ## Выводы
 Код создает строку с текущей датой, месяцем и годом, и выводит ее, а затем добавляет "Всего хорошего!" без перевода на новую строку.
@@ -266,7 +266,7 @@ my = "my"
 print(f"Привет, {my}, World!")
 ```
 ### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/6.png)
+![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/6.png)
 
 ## Выводы
 Значение переменной my вставлено в строку, и она выводится на экран с приветствием.
@@ -279,7 +279,7 @@ a = "Hello World!"
 print(len(a))
 ```
 ### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/7.png)
+![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/7.png)
 
 ## Выводы
 КОод считает количество символов, и выыводит значение на экран
@@ -292,7 +292,7 @@ text = 'HELLO WORLD'.lower()
 print(text)
 ```
 ### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/8.png)
+![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/8.png)
 
 ## Выводы
 Lower - переделывает капс текст в нижний регистр
@@ -308,7 +308,7 @@ c = (a ** b)
 print(text * c)
 ```
 ### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/9.png)
+![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/9.png)
 
 ## Выводы
 Код повторяет строку "Zadacha" 1024 раз и выводит ее на экран.
@@ -324,7 +324,7 @@ word_count = len(words)
 print(f"Количество слов в строке: {word_count}")
 ```
 ### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/THEME_2/pic/Practic/10.png)
+![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/Theme_2/pic/Practic/10.png)
 
 ## Выводы
 Код запрашивает у пользователя ввести строку, разбивает ее на слова, вычисляет количество слов и выводит количество слов на экран.
