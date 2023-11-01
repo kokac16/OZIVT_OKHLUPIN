@@ -1,4 +1,4 @@
-Отчет по Теме #2 выполнил(а):
+Отчет по Теме #6 выполнил(а):
 - Охлупин Константин Алексеевич
 - ИВТ-21-1
 
@@ -9,11 +9,7 @@
 | Задание 3 | + | + |
 | Задание 4 | + | + |
 | Задание 5 | + | + |
-| Задание 6 | + | + |
-| Задание 7 | + | + |
-| Задание 8 | + | + |
-| Задание 9 | + | + |
-| Задание 10 | + | + |
+
 
 знак "+" - задание выполнено; знак "-" - задание не выполнено;
 
@@ -21,265 +17,306 @@
 - к.э.н., доцент Панов М.А.
 
 ## Лабораторная работа 
-### 1) 
+### 1) В школе, где вы учились, узнали, что вы крутой программист и попросили написать программу для учителей, которая будет при вводе кабинета писать для него ключ доступа и статус, занят кабинет или нет. При написании программы необходимо использовать словарь (dict), который на вход получает номер кабинета, а выводит необходимую информацию. Если кабинета, который вы ввели нет в словаре, то в консоль в виде значения ключа нужно вывести “None” и виде статуса вывести “False”.
 
 ```python
+request = int(input('Введите номер кабинета: '))
+dictionary = {
+    101: {'key': 1234, 'access': True}, 
+    102: {'key': 1337, 'access': True}, 
+    103: {'key': 8943, 'access': True}, 
+    104: {'key': 5555, 'access': False}, 
+    None: {'key': None, 'access': False},
+}
 
+response = dictionary.get(request)
+if not response:
+    response = dictionary[None]
+key = response.get('key') 
+access = response.get('access')
+print(key, access)
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Lab/51.png)
 
 ## Выводы
+dictionary.get(request): Это метод словаря dictionary, который пытается получить значение по заданному ключу request. Если ключ существует, то возвращает соответствующее значение, иначе возвращает None.
+response = dictionary[None]: Эта строка присваивает значение словаря с ключом None переменной response, если ключ, введенный пользователем, не существует в словаре.
+response.get('key'): Это метод словаря, который пытается получить значение ключа 'key' из словаря response, который может быть либо словарем с данными кабинета, либо словарем с ключом None.
+response.get('access'): Эта строка аналогична предыдущей, но пытается получить значение ключа 'access' из словаря response.
 
 
-
-### 2) 
+### 2) Алексей решил создать самый большой словарь в мире. Для этого он придумал функцию dict_maker (**kwargs), которая принимает неограниченное количество параметров «ключ: значение» и обновляет Михаил А. Пановсозданный им словарь my_dict,состоящий всего из одного элемента «first» со значением «so easy». Помогите Алексею создать данную функцию.
 
 ```python
+from pprint import pprint
+my_dict = {'first': 'so easy'}
 
+def dict_maker (**kwargs):
+    my_dict.update(**kwargs)
+
+dict_maker(a1=1, a2=20, a3=54, a4=13)
+dict_maker(name='Константин', age=18, weight=68, eyes_color='blue')
+pprint(my_dict)
 ```
 
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/two.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Lab/52.png)
 
 ## Выводы
+pprint(): Эта функция импортируется из модуля pprint и используется для красивого и читаемого вывода сложных структур данных, таких как словари.
+dict_maker(**kwargs): Это пользовательская функция, которая принимает произвольное количество именованных аргументов в виде ключей и их значений. Затем она обновляет словарь my_dict, добавляя или обновляя соответствующие ключи и значения на основе переданных аргументов.
+dict_maker(a1=1, a2=20, a3=54, a4=13): Эта строка вызывает функцию dict_maker с аргументами a1=1, a2=20, a3=54, a4=13, которые будут добавлены в словарь my_dict.
+dict_maker(name='Константин', age=18, weight=68, eyes_color='blue'): Эта строка вызывает функцию dict_maker с аргументами 
 
-
-### 3) 
+### 3) Для решения некоторых задач бывает необходимо разложить строку на отдельные символы. Мы знаем что это можно сделать при помощи split(), у которого более гибкая настройка для разделения для этого, но если нам нужно посимвольно разделить строку без всяких условий, то для этого мы можем использовать кортежи (tuple). Для этого напишем любую строку, которую будем делить и “обвернем” ее в tuple и дальше мы можем как нам угодно с ней работать, например, сделать ее списком (тогда получится полный аналог split()) или же работать с ним дальше, как с кортежем.
 
 ```python
-
+input_string = 'HelloWorld' 
+result = tuple(input_string) 
+print (result) 
+print(list(result))
 ```
 
 ### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/three.png)
+![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Lab/53.png)
 
 ## Выводы
+tuple(input_string): Это строка кода, которая создает кортеж result, преобразуя строку input_string в кортеж. Каждый символ строки становится элементом кортежа.
+list(result): Эта строка кода преобразует кортеж result обратно в список, создавая новый список, содержащий те же символы.
+print(result): Эта функция используется для вывода кортежа result на экран.
+print(list(result): Эта функция используется для вывода списка, полученного из кортежа result, на экран.
 
 
-
-### 4) 
+### 4) Вовочка решил написать крутую функцию, которая будет писать имя, возраст и место работы, но при этом на вход этой функции будет поступать кортеж. Помогите Вовочке написать эту программу
 
 ```python
-
+def personal_info(name, age, company=' unnamed'):
+    print(f"Иmя: {name} Boзpacт: {age} Koмпaния: {company}")
+tom = ("Григорий", 22) 
+personal_info(*tom)
+bob = ("гeopгий", 41, "Yandex") 
+personal_info(*bob)
 ```
 ### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/2.png)
+![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Lab/54.png)
 
 ### Выводы
+personal_info(name, age, company=' unnamed'): Это пользовательская функция, которая принимает три аргумента: name, age и company (по умолчанию установлено значение "unnamed" для company). Функция выводит информацию о человеке, включая имя, возраст и компанию (по умолчанию "unnamed").
+personal_info(*tom): Эта строка вызывает функцию personal_info и передает элементы кортежа tom как аргументы функции. В этом случае, "Григорий" будет передан в name, а 22 будет передан в age. Так как значение company не указано, будет использовано значение по умолчанию "unnamed".
+personal_info(*bob): Эта строка также вызывает функцию personal_info и передает элементы кортежа bob как аргументы функции. "Георгий" будет передан в name, 41 в age и "Yandex" в company.
 
 
-
-### 5)
-
-```python
-
-```
-
-### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/3.png)
-
-### Выводы
-
-
-
-### 6) 
+### 5) Для сопровождения первых лиц государства X нужен кортеж, но никто не может определиться с порядком машин, поэтому вам нужно написать функцию, которая будет сортировать кортеж, состоящий из целых чисел по возрастанию, и возвращает его. Если хотя бы один элемент не является целым числом, то функция возвращает исходный кортеж. 
 
 ```python
+def tuple_sort(tpl): 
+    for elm in tpl:
+        if not isinstance(elm, int): 
+            return tpl
+    return tuple(sorted(tpl))
 
-```
-
-### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/4.png)
-
-### Выводы
-
-
-
-### 7)
-
-```python
-
+if __name__ == '__main__':
+    print(tuple_sort((5, 5, 3, 1, 9))) 
+    print(tuple_sort((5, 5, 2.1, '1', 9)))
 ```
 
 ### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/5.png)
+![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Lab/55.png)
 
 ### Выводы
-
-
-
-### 8) 
-
-```python
-
-```
-
-### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/6.png)
-
-### Выводы
-
-
-
-### 9) 
-
-```python
-
-```
-
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/7.png)
-
-### Выводы
-
-
-
-### 9) 
-
-```python
-
-```
-
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/7.png)
-
-### Выводы
-
-
-
-### 10) 
-
-```python
-
-```
-
-### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/8.png)
-
-### Выводы
-
-
+tuple_sort(tpl): Это пользовательская функция, которая принимает кортеж tpl в качестве аргумента. Функция проверяет каждый элемент кортежа и если хотя бы один из элементов не является целым числом, то она возвращает исходный кортеж без изменений. 
+print(tuple_sort((5, 5, 3, 1, 9))): В этой строке вызывается функция tuple_sort с кортежем (5, 5, 3, 1, 9), который содержит только целые числа. Функция сортирует элементы кортежа и выводит отсортированный кортеж на экран.
+print(tuple_sort((5, 5, 2.1, '1', 9))): В этой строке вызывается функция tuple_sort с кортежем (5, 5, 2.1, '1', 9), который содержит не только целые числа, но и десятичное число и строку. Функция обнаруживает, что не все элементы являются целыми числами, поэтому она возвращает исходный кортеж без изменений.
 
 
 ## Самостоятельная работа 
-### 1) 
+### 1) При создании сайта у вас возникла потребность обрабатывать данные пользователя в странной форме, а потом переводить их в нужные вам форматы. Вы хотите принимать от пользователя последовательность чисел, разделенных пробелом, а после переформатировать эти данные в список и кортеж. Реализуйте вашу задумку. Для получения начальных данных используйте input(). Результатом программы будет выведенный список и кортеж из начальных данных
 
 ```python
 
+user_input = input("Введите последовательность чисел, разделенных пробелами: ")
+numbers = user_input.split()
+numbers = [int(num) for num in numbers]
+number_list = numbers
+number_tuple = tuple(numbers)
+print("Список из введенных чисел:", number_list)
+print("Кортеж из введенных чисел:", number_tuple)
+
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Practic/51.png)
 
 ## Выводы
+user_input.split(): Эта строка кода разделяет введенную строку user_input на отдельные числа, разделенные пробелами, и создает список строк numbers.
+[int(num) for num in numbers]: Это выражение создает новый список numbers, преобразуя каждый элемент из списка строк в целое число.
+tuple(numbers): Эта строка преобразует список numbers в кортеж number_tuple.
 
 
-
-### 2)
+### 2) Николай знает, что кортежи являются неизменяемыми, но он очень упрямый и всегда хочет доказать, что он прав. Студент решил создать функцию, которая будет удалять первое появление определенного элемента из кортежа по значению и возвращать кортеж без него. Попробуйте повторить шедевр не признающего авторитеты начинающего программиста. Но учтите, что Николай не всегда уверен в наличии элемента в кортеже (в этом случае кортеж вернется функцией в исходном виде).
 
 ```python
+def remove_first_occurrence(tpl, element_to_remove):
+    tpl_list = list(tpl)
+    if element_to_remove in tpl_list:
+        tpl_list.remove(element_to_remove)
+    result_tpl = tuple(tpl_list)
+    
+    return result_tpl
 
+tuple1 = (1, 2, 3)
+element1 = 1
+result1 = remove_first_occurrence(tuple1, element1)
+print(result1)  
+
+tuple2 = (1, 2, 3, 1, 2, 3, 4, 5, 2, 3, 4, 2, 4, 2)
+element2 = 3
+result2 = remove_first_occurrence(tuple2, element2)
+print(result2)  
+
+tuple3 = (2, 4, 6, 6, 4, 2)
+element3 = 9
+result3 = remove_first_occurrence(tuple3, element3)
+print(result3)
 ```
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/2.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Practic/52.png)
 
 ## Выводы
+remove_first_occurrence(tpl, element_to_remove): Это пользовательская функция, которая принимает два аргумента: tpl, который представляет кортеж, и element_to_remove, который представляет элемент, который нужно удалить. Функция сначала преобразует кортеж tpl в список tpl_list, затем проверяет, если element_to_remove присутствует в tpl_list, и если да, то удаляет первое вхождение этого элемента. Затем она создает новый кортеж result_tpl на основе измененного списка и возвращает его.
+tuple1 = (1, 2, 3): Эта строка создает кортеж tuple1 с элементами 1, 2 и 3.
+element1 = 1: Это элемент, который нужно удалить из tuple1.
+result1 = remove_first_occurrence(tuple1, element1): Эта строка вызывает функцию remove_first_occurrence для удаления первого вхождения элемента 1 из tuple1 и сохранения результата в result1.
 
 
-
-### 3) 
-```python
-
-```
-### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/3.png)
-
-## Выводы
-
-
-
-### 4) 
-
-```python
-
-```
-### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/4.png)
-
-## Выводы
-
-
-
-### 5) 
-
-```python
-
-```
-### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/5.png)
-
-## Выводы
-
-
-
-### 6) 
+### 3) Ребята поспорили кто из них одним нажатием на numpad наберет больше повторяющихся цифр, но не понимают, как узнать победителя. Вам им нужно в этом помочь. Дана строка в виде случайной последовательности чисел от 0 до 9 (длина строки минимум 15 символов). Требуется создать словарь, который в качестве ключей будет принимать данные числа (т. е. ключи будут типом int), а в качестве значений – количество этих чисел в имеющейся последовательности. Для построения словаря создайте Михаил А. Пановфункцию, принимающую строку из цифр. Функция должна возвратить словарь из 3-х самых часто встречаемых чисел, также эти значения нужно вывести в порядке возрастания ключа.
 
 ```python
+def count_most_common_numbers(s):
+    digit_count = {}
+    for digit in s:
+        if digit.isdigit():
+            digit = int(digit)
+            if digit in digit_count:
+                digit_count[digit] += 1
+            else:
+                digit_count[digit] = 1
+
+    most_common = sorted(digit_count, key=digit_count.get, reverse=True)[:3]
+    result = {digit: digit_count[digit] for digit in most_common}
+
+    return result
+
+input_string = "1234455667788990"
+result_dict = count_most_common_numbers(input_string)
+for key in sorted(result_dict.keys()):
+    print(f"{key}: {result_dict[key]}")
 
 ```
 ### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/6.png)
+![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Practic/53.png)
 
 ## Выводы
+count_most_common_numbers(s): Это пользовательская функция, которая принимает строку s в качестве аргумента. Функция создает словарь digit_count, чтобы подсчитать, сколько раз каждая цифра встречается в строке s.
+for digit in s:: Этот цикл перебирает каждый символ строки s.
+if digit.isdigit(): Эта проверка проверяет, является ли символ digit цифрой.
+digit = int(digit): Если digit является цифрой, он преобразуется в целое число.
+if digit in digit_count:: Этот блок проверяет, если цифра уже есть в словаре digit_count, то увеличивает счетчик для этой цифры.
+else: Если цифры нет в digit_count, то она добавляется в словарь и устанавливается счетчик в 1.
+most_common = sorted(digit_count, key=digit_count.get, reverse=True)[:3]: Эта строка сортирует словарь digit_count в порядке убывания частоты встречаемости цифр и выбирает три наиболее часто встречающиеся цифры.
+result = {digit: digit_count[digit] for digit in most_common}: Эта строка создает новый словарь result, содержащий только три наиболее часто встречающиеся цифры и их счетчики.
+return result: Функция возвращает этот словарь как результат.
 
 
-
-### 7)
+### 4) Ваш хороший друг владеет офисом со входом по электронным картам, ему нужно чтобы вы написали программу, которая показывала в каком порядке сотрудники входили и выходили из офиса. Определение сотрудника происходит по id. Напишите функцию, которая на вход принимает кортеж и случайный элемент (id), его можно придумать самостоятельно. Требуется вернуть новый кортеж, начинающийся с первого появления элемента в нем и заканчивающийся вторым его появлением включительно.
 
 ```python
+def find_employee_entries(data, employee_id):
+    if employee_id not in data:
+
+        return ()
+    
+    first_occurrence = data.index(employee_id)
+    if data.count(employee_id) == 1:
+        return data[first_occurrence:]
+    
+    second_occurrence = data.index(employee_id, first_occurrence + 1)
+    return data[first_occurrence:second_occurrence + 1]
+
+tuple1 = (1, 2, 3)
+element1 = 8
+result1 = find_employee_entries(tuple1, element1)
+print(result1)  
+
+tuple2 = (1, 8, 3, 4, 8, 8, 9, 2)
+element2 = 8
+result2 = find_employee_entries(tuple2, element2)
+print(result2)  
+
+tuple3 = (1, 2, 8, 5, 1, 2, 9)
+element3 = 8
+result3 = find_employee_entries(tuple3, element3)
+print(result3)  
 
 ```
 ### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/7.png)
+![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Practic/34.png)
 
 ## Выводы
+find_employee_entries(data, employee_id): Это пользовательская функция, которая принимает кортеж data и идентификатор сотрудника employee_id.
+if employee_id not in data:: Проверяет, если идентификатор сотрудника не присутствует в кортеже data, функция возвращает пустой кортеж ().
+first_occurrence = data.index(employee_id): Находит индекс первого вхождения employee_id в кортеже data.
+if data.count(employee_id) == 1:: Если идентификатор встречается в кортеже только один раз, функция возвращает часть кортежа, начиная с индекса первого вхождения и до конца кортежа.
+second_occurrence = data.index(employee_id, first_occurrence + 1): Находит индекс второго вхождения employee_id
+return data[first_occurrence:second_occurrence + 1]: Возвращает часть кортежа
 
 
-
-### 8)
-
+### 5) Самостоятельно придумайте и решите задачу, в которой будут обязательно использоваться кортеж или список. Проведите минимум три теста для проверки работоспособности вашей задачи. 
+Перед вами стоит задача создать программу для исследования семейного архива, который представлен в виде списка кортежей. Каждый кортеж представляет информацию о членах семьи, включая имя, возраст и место рождения. Ваша цель - создать функцию для поиска членов семьи, удовлетворяющих определенным условиям.
 ```python
+def explore_family_archive(family_data, min_age, birthplace):
+    matching_members = []
+    for member in family_data:
+        name, age, place_of_birth = member
+        if age >= min_age and place_of_birth == birthplace:
+            matching_members.append(name)
+    
+    return matching_members
+
+
+family_data = [
+    ("Alice", 30, "New York"),
+    ("Bob", 25, "Los Angeles"),
+    ("Charlie", 40, "Chicago"),
+    ("David", 28, "New York"),
+    ("Eve", 35, "Chicago"),
+]
+
+min_age = 30
+birthplace = "New York"
+
+result = explore_family_archive(family_data, min_age, birthplace)
+print("Соответствующие члены семьи:", result)
 
 ```
 ### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/8.png)
+![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_6/pic/Practic/55.png)
 
 ## Выводы
-
-
-
-### 9)
-
-```python
-
-```
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/9.png)
-
-## Выводы
-
-
-
-### 10) 
-
-```python
-
-```
-### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/10.png)
-
-## Выводы
+explore_family_archive(family_data, min_age, birthplace): Это пользовательская функция, которая принимает список family_data, минимальный возраст min_age и место рождения birthplace.
+matching_members = []: Создается пустой список matching_members, в котором будут храниться имена членов семьи, соответствующих заданным критериям.
+for member in family_data:: Цикл перебирает каждого члена семьи в family_data.
+name, age, place_of_birth = member: Для каждого члена семьи извлекаются его имя, возраст и место рождения.
+if age >= min_age and place_of_birth == birthplace:: Это условие проверяет, соответствует ли возраст члена семьи заданному минимальному возрасту min_age и место рождения совпадает с birthplace. Если условие выполняется, имя члена семьи добавляется в список matching_members.
+return matching_members: Функция возвращает список matching_members, содержащий имена членов семьи, соответствующих заданным критериям
 
 
 
 ## Общий вывод по теме
+Словари представляют собой структуру данных, позволяющую хранить пары ключ-значение, где каждый ключ уникален. Они позволяют эффективно организовать и быстро получать доступ к данным.
+Виды создания словарей: Мы изучили различные способы создания словарей в Python, включая использование фигурных скобок, конструктора dict(), и генераторов словарей.
+Методы словарей: Рассмотрены различные методы работы с словарями, такие как добавление и удаление элементов, обновление значений, проверка наличия ключей и др.
+Обращения к элементам словаря: Мы узнали, как получать доступ к значениям по ключу с использованием квадратных скобок [], а также как использовать метод get() для безопасного доступа к элементам словаря. Методы keys(), values() и items() позволяют получать списки ключей, значений и пар ключ-значение соответственно.
+Кортежи представляют собой неизменяемую структуру данных, которая может содержать разнородные элементы. Они часто используются для хранения и передачи неизменяемых наборов данных.
+Мы изучили основные операции, доступные для кортежей, такие как создание, индексирование и срезы.
+Кортежи могут быть переданы в функции как аргументы и возвращены из функций как результат. Это позволяет эффективно обрабатывать наборы данных.
