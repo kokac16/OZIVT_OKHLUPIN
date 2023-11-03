@@ -1,0 +1,10 @@
+Started program: MyProgram
+Start time: 2023-11-02 15:03:23
+Program: MyProgram
+Current time: 2023-11-02 15:03:23
+Point: Point 1
+Time elapsed: 5.01 seconds
+Point: Point 2
+Time elapsed: 6.51 seconds
+End of program: MyProgram
+End time: 2023-11-02 15:03:30
