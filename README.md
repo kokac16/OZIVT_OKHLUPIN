@@ -1,4 +1,4 @@
-Отчет по Теме #2 выполнил(а):
+Отчет по Теме #8 выполнил(а):
 - Охлупин Константин Алексеевич
 - ИВТ-21-1
 
@@ -9,11 +9,7 @@
 | Задание 3 | + | + |
 | Задание 4 | + | + |
 | Задание 5 | + | + |
-| Задание 6 | + | + |
-| Задание 7 | + | + |
-| Задание 8 | + | + |
-| Задание 9 | + | + |
-| Задание 10 | + | + |
+
 
 знак "+" - задание выполнено; знак "-" - задание не выполнено;
 
@@ -21,265 +17,311 @@
 - к.э.н., доцент Панов М.А.
 
 ## Лабораторная работа 
-### 1) 
+### 1) Создайте класс “Car” с атрибутами производитель и модель. Создайте объект этого класса. Напишите комментарии для кода, объясняющие его работу. Результатом выполнения задания будет листинг кода с комментариями.
 
 ```python
-
+class Car:
+    def __init__(self, make, model):
+         self.make = make
+         self.model = model
+my_car = Car("Toyota", "Corolla")   
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Lab/81.png)
 
 ## Выводы
+__init__(self, make, model): Это конструктор класса Car, который вызывается при создании нового объекта класса Car. Он принимает два аргумента: make (марка автомобиля) и model (модель автомобиля). Внутри конструктора эти значения присваиваются соответствующим атрибутам объекта.
+Помимо функций, в классе также определены два атрибута: make и model
 
 
-
-### 2) 
+### 2) Дополните код из первого задания, добавив в него атрибуты и методы класса, заставьте машину “поехать”. Напишите комментарии для кода, объясняющие его работу. Результатом выполнения задания будет листинг кода с комментариями и получившийся вывод в консоль. 
 
 ```python
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
 
+    def drive(self):
+        print(f"Driving the {self.make} {self.model}")
+
+my_car = Car ("Lada", "Kalina")
+my_car.drive()
 ```
 
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/two.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Lab/82.png)
 
 ## Выводы
+__init__(self, make, model): Это конструктор класса Car, который вызывается при создании нового объекта класса Car. Он принимает два аргумента: make (марка автомобиля) и model (модель автомобиля). Внутри конструктора эти значения присваиваются соответствующим атрибутам объекта.
+drive(self): Это метод класса Car, который выводит сообщение о том, что автомобиль с маркой make и моделью model едет. Здесь self ссылается на текущий объект класса Car, поэтому метод имеет доступ к его атрибутам make и model.
 
-
-### 3) 
+### 3) Создайте новый класс “ElectricCar” с методом “charge” и атрибутом емкость батареи. Реализуйте его наследование от класса, созданного в первом задании. Заставьте машину поехать, а потом заряжаться. 
 
 ```python
+from lab2 import Car
 
+class ElectricCar(Car):
+    def __init__(self, make, model, battery_capacity): 
+        super().__init__(make, model)
+        self.battery_capacity = battery_capacity
+
+    def charge(self):
+        print(f"Charging the {self.make} {self.model} with {self.battery_capacity} kWh")
+
+my_electric_car = ElectricCar ("Tesla", "Model S", 75)
+my_electric_car.drive()
+my_electric_car.charge()    
 ```
 
 ### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/three.png)
+![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Lab/83.png)
 
 ## Выводы
+__init__(self, make, model): Это конструктор класса Car, который вызывается при создании нового объекта класса Car. Он принимает два аргумента: make (марка автомобиля) и model (модель автомобиля). Внутри конструктора эти значения присваиваются соответствующим атрибутам объекта.
+drive(self): Это метод класса Car, который выводит сообщение о том, что автомобиль с маркой make и моделью model едет. Здесь self ссылается на текущий объект класса Car, поэтому метод имеет доступ к его атрибутам make и model.
 
 
+### 4) Реализуйте инкапсуляцию для класса, созданного в первом задании. Создайте защищенный атрибут производителя и приватный атрибут модели. Вызовите защищенный атрибут и заставьте машину поехать. Напишите комментарии для кода, объясняющие его работу. Результатом выполнения задания будет листинг кода с комментариями и получившийся вывод в консоль. 
 
-### 4) 
 
 ```python
+from lab2 import Car
+class Car:
+    def __init__(self, make, model):
+        self._make = make 
 
+    def drive(self):
+        print(f"Driving the {self._make} {self.__model}")
+
+my_car = Car ("Lada", "Kalina")
+print(my_car. _make) 
+
+my_car.drive()
 ```
 ### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/2.png)
+![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Lab/84.png)
 
 ### Выводы
 
 
 
-### 5)
+### 5) Реализуйте полиморфизм создав основной (общий) класс “Shape”, а также еще два класса “Rectangle” и “Circle”. Внутри последних двух классов реализуйте методы для подсчета площади фигуры. После этогосоздайте массив с фигурами, поместите туда круг и прямоугольник, затем при помощи цикла выведите их площади. Напишите комментарии для кода, объясняющие его работу. Результатом выполнения задания будет листинг кода с комментариями и получившийся вывод в консоль. 
+ 
 
 ```python
+class Shape:
+    def area(self):
+        pass
 
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+
+class Circle (Shape):
+    def __init__(self, radius): 
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
 ```
 
 ### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/3.png)
+![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Lab/85.png)
 
 ### Выводы
-
-
-
-### 6) 
-
-```python
-
-```
-
-### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/4.png)
-
-### Выводы
-
-
-
-### 7)
-
-```python
-
-```
-
-### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/5.png)
-
-### Выводы
-
-
-
-### 8) 
-
-```python
-
-```
-
-### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/6.png)
-
-### Выводы
-
-
-
-### 9) 
-
-```python
-
-```
-
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/7.png)
-
-### Выводы
-
-
-
-### 9) 
-
-```python
-
-```
-
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/7.png)
-
-### Выводы
-
-
-
-### 10) 
-
-```python
-
-```
-
-### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/8.png)
-
-### Выводы
-
-
-
+Shape - это базовый класс, у которого есть метод area. Этот метод объявлен как абстрактный с помощью pass, что означает, что он должен быть переопределен в подклассах.
+Rectangle - это подкласс класса Shape, представляющий прямоугольник. У него есть конструктор __init__, который принимает ширину и высоту прямоугольника. Метод area переопределен и возвращает площадь прямоугольника, вычисляемую как произведение ширины на высоту.
+Circle - это еще один подкласс класса Shape, представляющий круг. У него есть конструктор __init__, который принимает радиус круга. Метод area также переопределен и возвращает площадь круга, вычисляемую как 3.14 (приближенное значение числа π) умноженное на квадрат радиуса.
 
 ## Самостоятельная работа 
-### 1) 
+### 1) Самостоятельно создайте класс и его объект. Они должны отличаться, от тех, что указаны в теоретическом материале (методичке) и лабораторных заданиях. Результатом выполнения задания будет листинг кода и получившийся вывод консоли.
 
 ```python
+class Book:
+    def __init__(self, title, author, year):
+        self.title = title
+        self.author = author
+        self.year = year
+
+    def get_info(self):
+        return f"Title: {self.title}\nAuthor: {self.author}\nYear: {self.year}"
+
+book1 = Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997)
+
+print(book1.get_info())
 
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Practic/81.png)
 
 ## Выводы
+Book - это класс, представляющий книгу. У него есть конструктор __init__, который инициализирует атрибуты title, author, и year при создании нового объекта.
+get_info - это метод класса Book, который возвращает строку с информацией о книге, включая её заголовок (title), автора (author) и год выпуска (year).
+Создается объект book1 класса Book с определенными параметрами.
+Затем вызывается метод get_info для объекта book1 и результат выводится на экран с помощью функции print.
 
 
-
-### 2)
+### 2)Самостоятельно создайте атрибуты и методы для ранее созданногокласса. Они должны отличаться, от тех, что указаны в теоретическом материале (методичке) и лабораторных заданиях. Результатом выполнения задания будет листинг кода и получившийся вывод консоли.
 
 ```python
+class Book:
+    def __init__(self, title, author, year):
+        self.title = title
+        self.author = author
+        self.year = year
+
+    def get_info(self):
+        return f"Title: {self.title}\nAuthor: {self.author}\nYear: {self.year}"
+
+    def set_year(self, new_year):
+        self.year = new_year
+
+book1 = Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997)
+
+print(book1.get_info())
+
+book1.set_year(1998)
+
+print(book1.get_info())
 
 ```
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/2.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Practic/82.png)
 
 ## Выводы
+Book - это класс, представляющий книгу. У него есть конструктор __init__, который инициализирует атрибуты title, author, и year при создании нового объекта.
+get_info - это метод класса Book, который возвращает строку с информацией о книге, включая её заголовок (title), автора (author) и год выпуска (year).
+set_year - это метод класса Book, который позволяет установить новый год выпуска для книги.
+Создается объект book1 класса Book с определенными параметрами.
+Выводится информация о книге с использованием метода get_info.
+Вызывается метод set_year для объекта book1, устанавливая новый год выпуска.
+Вновь выводится информация о книге, теперь с обновленным годом выпуска.
 
 
+### 3) Самостоятельно реализуйте наследование, продолжая работать с ранее созданным классом. Оно должно отличаться, от того, что указано в теоретическом материале (методичке) и лабораторных заданиях. Результатом выполнения задания будет листинг кода и по получившийся вывод консоли.
 
-### 3) 
 ```python
+class Book:
+    def __init__(self, title, author, year):
+        self.title = title
+        self.author = author
+        self.year = year
+
+    def get_info(self):
+        return f"Title: {self.title}\nAuthor: {self.author}\nYear: {self.year}"
+
+class FantasyBook(Book):
+    def __init__(self, title, author, year, genre):
+        super().__init__(title, author, year)
+        self.genre = genre
+
+    def get_genre(self):
+        return f"Genre: {self.genre}"
+
+fantasy_book1 = FantasyBook("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997, "Fantasy")
+
+print(fantasy_book1.get_info())
+print(fantasy_book1.get_genre())
 
 ```
 ### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/3.png)
+![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Practic/83.png)
 
 ## Выводы
+FantasyBook - это подкласс класса Book, представляющий фэнтезийную книгу. У него есть конструктор __init__, который вызывает конструктор базового класса с использованием super() и добавляет атрибут genre. Есть также метод get_genre, возвращающий строку с информацией о жанре книги.
+Создается объект fantasy_book1 класса FantasyBook с определенными параметрами, включая жанр.
+Выводится информация о книге с использованием метода get_info и информация о жанре с использованием метода get_genre.
 
 
-
-### 4) 
+### 4) Самостоятельно реализуйте инкапсуляцию, продолжая работать с ранее созданным классом. Она должна отличаться, от того, что указана в теоретическом материале (методичке) и лабораторных заданиях. Результатом выполнения задания будет листинг кода и получившийся вывод консоли.
 
 ```python
+class Book:
+    def __init__(self, title, author, year):
+        self._title = title
+        self._author = author
+        self._year = year
+
+    def get_info(self):
+        return f"Title: {self._title}\nAuthor: {self._author}\nYear: {self._year}"
+
+class FantasyBook(Book):
+    def __init__(self, title, author, year, genre):
+        super().__init__(title, author, year)
+        self._genre = genre
+
+    def get_genre(self):
+        return f"Genre: {self._genre}"
+
+fantasy_book1 = FantasyBook("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997, "Fantasy")
+
+print(fantasy_book1._title)  
+print(fantasy_book1._genre) 
+
+fantasy_book1._title = "New Title"
+fantasy_book1._genre = "New Genre"
+
+print(fantasy_book1.get_info())  
+print(fantasy_book1.get_genre())  
 
 ```
 ### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/4.png)
+![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Practic/84.png)
 
 ## Выводы
+Выводится значение защищенных атрибутов _title и _genre напрямую. Хотя обычно это не рекомендуется (лучше использовать методы доступа), в данном случае атрибуты являются защищенными, а не приватными, поэтому доступ к ним извне класса разрешен.
 
-
-
-### 5) 
+### 5) Самостоятельно реализуйте полиморфизм. Он должен отличаться, от того, что указан в теоретическом материале (методичке) и лабораторных заданиях. Результатом выполнения задания будет листинг кода и получившийся вывод консоли. 
 
 ```python
+class Shape:
+    def area(self):
+        pass
+
+class Square(Shape):
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+    def area(self):
+        return self.side_length ** 2
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * (self.radius ** 2)
+
+square1 = Square(5)
+circle1 = Circle(3)
+
+print(f"Площадь квадрата: {square1.area()}") 
+print(f"Площадь круга: {circle1.area()}")  
 
 ```
 ### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/5.png)
+![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_8/pic/Practic/85.png)
 
 ## Выводы
-
-
-
-### 6) 
-
-```python
-
-```
-### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/6.png)
-
-## Выводы
-
-
-
-### 7)
-
-```python
-
-```
-### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/7.png)
-
-## Выводы
-
-
-
-### 8)
-
-```python
-
-```
-### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/8.png)
-
-## Выводы
-
-
-
-### 9)
-
-```python
-
-```
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/9.png)
-
-## Выводы
-
-
-
-### 10) 
-
-```python
-
-```
-### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/10.png)
-
-## Выводы
-
+Shape - это базовый класс, у которого есть метод area. Этот метод объявлен как абстрактный с помощью pass, что означает, что он должен быть переопределен в подклассах.
+Square - это подкласс класса Shape, представляющий квадрат. У него есть конструктор __init__, который принимает длину стороны квадрата. Метод area переопределен и возвращает площадь квадрата, вычисляемую как квадрат длины стороны.
+Circle - это еще один подкласс класса Shape, представляющий круг. У него есть конструктор __init__, который принимает радиус круга. Метод area также переопределен и возвращает площадь круга, вычисляемую как 3.14 (приближенное значение числа π) умноженное на квадрат радиуса.
+Создаются объекты square1 и circle1 классов Square и Circle соответственно, с указанными параметрами.
+Выводится площадь квадрата и круга с использованием метода area для каждой фигуры
 
 
 ## Общий вывод по теме
+Классы - это шаблоны или чертежи для создания объектов. Они определяют атрибуты (переменные) и методы (функции), которые могут быть использованы объектами данного класса.
+Объекты - это экземпляры классов. Они содержат состояние (атрибуты) и поведение (методы), определенное в классе.
+Атрибуты - переменные, хранящие данные, принадлежащие объекту. Они могут быть публичными, защищенными или приватными, в зависимости от способа объявления.
+Методы - функции, привязанные к объекту. Они предоставляют функциональность объекта и могут изменять его состояние.
+Наследование позволяет создавать новые классы на основе существующих. Подклассы наследуют атрибуты и методы от своих суперклассов, что позволяет повторно использовать код и создавать иерархии классов.
+Инкапсуляция позволяет скрывать детали реализации объекта от пользователя. Атрибуты могут быть объявлены публичными, защищенными или приватными, что контролирует уровень доступа к ним.
+Полиморфизм позволяет объектам разных классов иметь одинаковые методы, но с различной реализацией. Это позволяет работать с объектами разных классов через общий интерфейс.
