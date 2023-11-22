@@ -1,4 +1,4 @@
-Отчет по Теме #2 выполнил(а):
+Отчет по Теме #11 выполнил(а):
 - Охлупин Константин Алексеевич
 - ИВТ-21-1
 
@@ -6,14 +6,10 @@
 | ------ | ------ | ------ |
 | Задание 1 | + | + |
 | Задание 2 | + | + |
-| Задание 3 | + | + |
-| Задание 4 | + | + |
-| Задание 5 | + | + |
-| Задание 6 | + | + |
-| Задание 7 | + | + |
-| Задание 8 | + | + |
-| Задание 9 | + | + |
-| Задание 10 | + | + |
+| Задание 3 | + |   |
+| Задание 4 | + |   |
+| Задание 5 | + |   |
+
 
 знак "+" - задание выполнено; знак "-" - задание не выполнено;
 
@@ -21,265 +17,176 @@
 - к.э.н., доцент Панов М.А.
 
 ## Лабораторная работа 
-### 1) 
+### 1) Простой итератор, но у него нет гибкой настройки, например его нельзя развернуть. Он работает просто как next(), но нет prev()
 
 ```python
-
+numbers = [0, 1, 2, 3, 4, 5] 
+for item in numbers:
+    print(item)
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_11/pic/Lab/111.png)
 
 ## Выводы
+Используется цикл for, чтобы пройти по каждому элементу списка
 
 
-
-### 2) 
+### 2) Класс итератор с гибкой настройкой и удобными применением
 
 ```python
+class CountDown: 
+    def __init__(self, start):
+        self.count = start + 1
 
+    def __iter__(self): 
+        return self
+
+    def __next__(self): 
+        self.count -= 1
+        if self.count < 0:
+            raise StopIteration
+        return self.count
+
+if __name__ == '__main__': 
+    counter = CountDown(5)
+    for i in counter:
+        print(i)
 ```
 
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/two.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_11/pic/Lab/112.png)
 
 ## Выводы
+Метод __init__
+Инициализирует объект класса CountDown с начальным значением, увеличенным на 1, и сохраняет его в переменной self.count.
+Метод __iter__
+Возвращает сам объект в качестве итератора, что позволяет использовать экземпляр класса в цикле for.
+Метод __next__
+Уменьшает значение self.count на 1 при каждом вызове. Если self.count становится меньше 0, генерирует исключение StopIteration, сигнализируя о завершении итерации. В противном случае возвращает текущее значение self.count.
+Основной блок кода
+Создает экземпляр класса CountDown с начальным значением 5 и использует цикл for для итерации по объекту, выводя значения на каждой итерации.
 
-
-### 3) 
+### 3) Генератор списка 
 
 ```python
 
+a = [i ** 2 for i in range(1, 5)]
+
+print('a - ', a)
+for i in a:
+    print(i)
+print('iter(a) - ', iter(a))
+for i in a: 
+    print(i)
 ```
 
 ### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/three.png)
+![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_11/pic/Lab/113.png)
 
 ## Выводы
+Создает список a с квадратами чисел от 1 до 4, используя генератор списка.
+Вывод списка a:
+Выводит содержимое списка a.
+Цикл по элементам списка a:
+Использует цикл for для итерации по элементам списка a и выводит каждый элемент.
+Создание итератора:
+Использует функцию iter(a) для создания итератора для списка a и выводит сообщение.
+Цикл с использованием итератора:
+Использует цикл for для итерации по элементам списка a с использованием созданного итератора и выводит каждый элемент.
 
 
-
-### 4) 
+### 4) Выражения генераторы 
 
 ```python
-
+b = (i ** 2 for i in range(1, 5))
+print(b) # вывод не такой, как у генератора списков print('first')
+for i in b: 
+    print(i) 
+    print('second')
+# из-за особенностей выражений генераторов, # они не будут выводиться больше одного раза
+for i in b:
+    print(i)
 ```
 ### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/2.png)
+![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_11/pic/Lab/114.png)
 
 ### Выводы
+Создает генератор b, который генерирует квадраты чисел от 1 до 4.
+Вывод генератора:
+Выводит объект-генератор b, что дает немгновенный вывод не такой, как при использовании генератора списков.
+Цикл по элементам генератора:
+Использует цикл for для итерации по элементам генератора b и выводит каждый элемент, сопровождая вывод строкой 'second'.
+Повторный цикл по генератору:
+Пытается использовать еще один цикл for для повторной итерации по генератору b. Однако, из-за особенностей генераторов, они исчерпываются после первой итерации, поэтому этот цикл не выведет ничего.
 
 
-
-### 5)
-
-```python
-
-```
-
-### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/3.png)
-
-### Выводы
-
-
-
-### 6) 
+### 5)Такой же счетчик, как и в первом задании, только это генератор и использует yield
 
 ```python
-
-```
-
-### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/4.png)
-
-### Выводы
-
-
-
-### 7)
-
-```python
-
-```
-
-### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/5.png)
-
-### Выводы
-
-
-
-### 8) 
-
-```python
-
+def countdown(count):
+    while count >= 0:
+        yield count
+        count -= 1
+if __name__ == '__main__': 
+    counter = countdown (5)
+    for i in counter:
+        print(i)
 ```
 
 ### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/6.png)
+![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_11/pic/Lab/115.png)
 
 ### Выводы
-
-
-
-### 9) 
-
-```python
-
-```
-
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/7.png)
-
-### Выводы
-
-
-
-### 9) 
-
-```python
-
-```
-
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/7.png)
-
-### Выводы
-
-
-
-### 10) 
-
-```python
-
-```
-
-### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Lab/8.png)
-
-### Выводы
-
+Это генераторная функция countdown, которая создает итератор, возвращающий значения от count до 0. Использует ключевое слово yield для выдачи каждого значения на каждой итерации цикла while.
 
 
 
 ## Самостоятельная работа 
-### 1) 
+### 1) реализовать программу, которая считает числа Фибоначчи при помощи итераторов.
 
 ```python
+def fib(n):
+    a, b = 1, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+# Генерация 200 чисел Фибоначчи
+fibonacci_sequence = list(fib(200))
+
+# Вывод результатов в консоль
+print(fibonacci_sequence[-1])
 
 ```
 ### Результат.
-![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/1.png)
+![ex1](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_11/pic/Practic/111.png)
 
 ## Выводы
+Этот код содержит одну функцию fib, которая генерирует числа Фибоначчи до указанного номера. Она использует генератор для вычисления последовательности
 
 
-
-### 2)
+### 2)Такой же счетчик, как и в первом задании, только это генератор и использует yield
 
 ```python
+def fib(n):
+    a, b = 1, 1
+    with open("fib.txt", "w") as file:
+        for _ in range(n):
+            file.write(str(a) + "\n")
+            a, b = b, a + b
+
+# Генерация 200 чисел Фибоначчи и запись в файл "fib.txt"
+fib(200)
 
 ```
 ### Результат.
-![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/2.png)
+![ex2](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/theme_11/pic/Practic/112.png)
 
 ## Выводы
-
-
-
-### 3) 
-```python
-
-```
-### Результат.
-![ex3](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/3.png)
-
-## Выводы
-
-
-
-### 4) 
-
-```python
-
-```
-### Результат.
-![ex4](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/4.png)
-
-## Выводы
-
-
-
-### 5) 
-
-```python
-
-```
-### Результат.
-![ex5](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/5.png)
-
-## Выводы
-
-
-
-### 6) 
-
-```python
-
-```
-### Результат.
-![ex6](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/6.png)
-
-## Выводы
-
-
-
-### 7)
-
-```python
-
-```
-### Результат.
-![ex7](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/7.png)
-
-## Выводы
-
-
-
-### 8)
-
-```python
-
-```
-### Результат.
-![ex8](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/8.png)
-
-## Выводы
-
-
-
-### 9)
-
-```python
-
-```
-### Результат.
-![ex9](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/9.png)
-
-## Выводы
-
-
-
-### 10) 
-
-```python
-
-```
-### Результат.
-![ex10](https://github.com/kokac16/OZIVT_OKHLUPIN/blob/shablon/pic/Practic/10.png)
-
-## Выводы
-
+Просто выводит все числа в файл.
 
 
 ## Общий вывод по теме
+Тема 11 затрагивает ключевые концепции программирования, связанные с итераторами и генераторами. Итераторы представляют собой объекты, способные последовательно возвращать элементы из итерируемых структур данных. Файлы могут действовать как итераторы, упрощая обработку данных.
+Генераторы — это мощный инструмент, предоставляющий удобный способ создания итераторов в Python. Они позволяют эффективно обрабатывать большие объемы данных, генерируя значения по мере необходимости. Генераторные выражения представляют собой компактный синтаксис для создания генераторов.
+Чтение генераторов и методы их применения также входят в рассмотрение. Генераторы обеспечивают преимущества, такие как экономия памяти и возможность ленивой загрузки данных, что делает их полезными инструментами при работе с большими объемами информации.
